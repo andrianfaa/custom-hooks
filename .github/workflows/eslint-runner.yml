@@ -1,0 +1,28 @@
+name: ESLint Runner Workflow
+
+on:
+  push:
+    branches: ["master"]
+  pull_request:
+    branches: ["master"]
+  schedule:
+    - cron: "32 16 * * 4"
+
+jobs:
+  eslint:
+    name: Run eslint scanning
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      security-events: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install Dependencies
+        run: npm install
+        continue-on-error: false
+
+      - name: Run ESLint
+        run: npm run lint
+        continue-on-error: false
