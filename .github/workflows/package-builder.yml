@@ -1,0 +1,34 @@
+name: Package builder
+
+on:
+  push:
+    branches: ["package"]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install Dependencies
+        run: npm install
+        continue-on-error: false
+
+      - name: Run ESLint
+        run: npm run lint
+        continue-on-error: false
+
+      - name: Building package
+        run: npm run build
+        continue-on-error: false
+
+      - name: Commiting files
+        uses: EndBug/add-and-commit@v9
+        with:
+          add: "lib"
+          author_name: andrianfaa
+          author_email: hi@anfa.my.id
+          commit: --signoff
+          message: "build files"

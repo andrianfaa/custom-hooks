@@ -2,11 +2,18 @@
   "name": "@anfa/custom-hooks",
   "version": "1.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
-    "build": "tsc --project './tsconfig.json'"
+    "build": "tsc --project \"./tsconfig.json\"",
+    "lint": "eslint \"./**/*.{ts,tsx,js,jsx}\"",
+    "lint:fix": "eslint \"./**/*.{ts,tsx,js,jsx}\" --fix"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrianfaa/custom-hook-collection.git"
+  },
+  "author": "https://github.com/andrianfaa",
   "license": "ISC",
   "dependencies": {
     "@types/react": "^18.0.35",
