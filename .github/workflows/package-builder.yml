@@ -24,11 +24,11 @@ jobs:
         run: npm run build
         continue-on-error: false
 
-      # - name: Commiting files
-      #   uses: EndBug/add-and-commit@v9
-      #   with:
-      #     add: "lib"
-      #     author_name: andrianfaa
-      #     author_email: hi@anfa.my.id
-      #     commit: --signoff
-      #     message: "build files"
+      - name: Commiting files
+        uses: EndBug/add-and-commit@v9
+        with:
+          add: "lib"
+          author_name: andrianfaa
+          author_email: hi@anfa.my.id
+          commit: --signoff
+          message: "build files"
