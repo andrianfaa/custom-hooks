@@ -5,7 +5,9 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
-    "build": "tsc --project \"./tsconfig.json\""
+    "build": "tsc --project \"./tsconfig.json\"",
+    "lint": "eslint \"./**/*.{ts,tsx,js,jsx}\"",
+    "lint:fix": "eslint \"./**/*.{ts,tsx,js,jsx}\" --fix"
   },
   "repository": {
     "type": "git",
